@@ -31,16 +31,21 @@ set("n", "<leader>rn", ":lua vim.lsp.buf.rename()", ns)
 set("n", "<leader>dn", ":lua vim.lsp.diagnostic.goto_next()", ns)
 set("n", "<leader>dN", ":lua vim.lsp.diagnostic.goto_prev()", ns)
 
-set("n", "<leader>fu", ":lua require('telescope.builtin').lsp_references()", ns)
-set("n", "<leader>gd", ":lua require('telescope.builtin').lsp_definitions()", ns)
-set("n", "<leader>dd", ":lua require('telescope.builtin').lsp_document_diagnostics()", ns)
-set("n", "<leader>dD", ":lua require('telescope.builtin').lsp_workspace_diagnostics()", ns)
+set("n", "<leader>fu", ":lua require('telescope.builtin').lsp_references()<cr>", ns)
+set("n", "<leader>gd", ":lua require('telescope.builtin').lsp_definitions()<cr>", ns)
+set("n", "<leader>dd", ":lua require('telescope.builtin').lsp_document_diagnostics()<cr>", ns)
+set("n", "<leader>dD", ":lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>", ns)
 
 -- Code actions
 set('n', '<leader>xd', '<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap = true})
-set('v', '<leader>xx', '<cmd>lua require\'telescope.builtin\'.lsp_range_code_actions{}<CR>', {noremap = true})
+set('v', '<leader>xx', '<cmd>lua require\'telescope.builtin\'.lsp_range_code_actions{}<CR>', ns)
 
 -- File Tree
-set("n", "<leader>to", [[<cmd>Neotree filesystem reveal left<CR>]], ns)
-set("n", "<leader>tg", [[<cmd>Neotree git_status reveal left<CR>]], ns)
-set("n", "<leader>tb", [[<cmd>Neotree buffers reveal left<CR>]], ns)
+set("n", "<leader>to", [[<cmd>Neotree filesystem toggle left<CR>]], ns)
+set("n", "<leader>tg", [[<cmd>Neotree git_status toggle left<CR>]], ns)
+set("n", "<leader>tb", [[<cmd>Neotree buffers toggle left<CR>]], ns)
+set("n", "<leader>tb", [[<cmd>Neotree buffers toggle left<CR>]], ns)
+
+-- ToggleTerm
+set("n", "<leader>tg", "<cmd>lua _lazygit_toggle()<CR>", ns)
+set("n", "<leader>th", "<cmd>lua _htop_toggle()<CR>", ns)

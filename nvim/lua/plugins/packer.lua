@@ -13,7 +13,9 @@ return require('packer').startup(function(use)
   use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
   use 'nvim-lua/plenary.nvim'
   use 'kyazdani42/nvim-web-devicons'
-
+  use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+  use {'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons'}
+}
   -- telescope
   -- optional dependency: https://github.com/sharkdp/fd | sudo apt install fd-find
   use 'BurntSushi/ripgrep'
@@ -56,7 +58,13 @@ return require('packer').startup(function(use)
         "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
         "MunifTanjim/nui.nvim",
       }
-    }
+  }
+
+  -- Extra
+  use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+    require("toggleterm").setup()
+  end}
+
   if packer_bootstrap then
     require('packer').sync()
   end
