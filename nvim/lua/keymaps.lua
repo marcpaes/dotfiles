@@ -27,7 +27,7 @@ set("n", "K", ":lua vim.lsp.buf.hover()<cr>", ns)
 set("n", "<c-k>", ":lua vim.lsp.buf.signature_help()<cr>", ns)
 set("n", "<leader>af", ":lua vim.lsp.buf.code_action()<cr>", ns)
 set("n", "<leader>rn", ":lua vim.lsp.buf.rename()<cr>", ns)
-set("n", "<leader>rn", ":lua vim.lsp.buf.rename()", ns)
+-- set("n", "<leader>rn", ":lua vim.lsp.buf.rename()", ns)
 set("n", "<leader>dn", ":lua vim.lsp.diagnostic.goto_next()", ns)
 set("n", "<leader>dN", ":lua vim.lsp.diagnostic.goto_prev()", ns)
 
@@ -46,5 +46,5 @@ set("n", "<leader>tg", [[<cmd>Neotree git_status toggle left<CR>]], ns)
 set("n", "<leader>tb", [[<cmd>Neotree buffers toggle left<CR>]], ns)
 
 -- ToggleTerm
-set("n", "<leader>tg", "<cmd>lua _lazygit_toggle()<CR>", ns)
-set("n", "<leader>th", "<cmd>lua _htop_toggle()<CR>", ns)
+set("n", "<leader>ttg", "<cmd>lua _lazygit_toggle()<CR>", ns)
+set("n", "<leader>tth", "<cmd>lua _htop_toggle()<CR>", ns)
