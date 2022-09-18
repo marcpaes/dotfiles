@@ -17,7 +17,7 @@ set("n", "<Leader>fh", ":lua require('telescope.builtin').help_tags()<cr>", ns)
 
 -- LSP Features
 set("n", "gd", ":lua vim.lsp.buf.definition()<cr>", ns)
-set("n", "gD", ":lua vim.lsp.buf.definition({jump_type = 'vsplit'})<cr>", ns)
+set("n", "gD", ":vsplit | lua vim.lsp.buf.definition()<cr>", ns)
 set("n", "gi", ":lua vim.lsp.buf.implementation()<cr>", ns)
 set("n", "gw", ":lua vim.lsp.buf.document_symbol()<cr>", ns)
 set("n", "gw", ":lua vim.lsp.buf.workspace_symbol()<cr>", ns)
@@ -43,7 +43,6 @@ set('v', '<leader>xx', '<cmd>lua require\'telescope.builtin\'.lsp_range_code_act
 -- File Tree
 set("n", "<leader>to", [[<cmd>Neotree filesystem toggle left<CR>]], ns)
 set("n", "<leader>tg", [[<cmd>Neotree git_status toggle left<CR>]], ns)
-set("n", "<leader>tb", [[<cmd>Neotree buffers toggle left<CR>]], ns)
 set("n", "<leader>tb", [[<cmd>Neotree buffers toggle left<CR>]], ns)
 
 -- ToggleTerm

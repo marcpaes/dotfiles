@@ -6,7 +6,7 @@ local cmd = vim.cmd
 -- General
 opt.compatible = false
 opt.mouse = 'a'
--- opt.clipboard = 'unnamedplus'
+opt.clipboard = 'unnamedplus'
 opt.swapfile = false
 
 -- Theme
