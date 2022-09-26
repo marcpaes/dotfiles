@@ -34,6 +34,8 @@ export FZF_ALT_C_COMMAND="fd -t d . $HOME"
 
 plugins=(git zsh-nvm docker docker-compose dotenv kubectl npm fzf fzf-tab tmux)
 
+RPS1='$(kubectx_prompt_info)'
+
 source $ZSH/oh-my-zsh.sh
 
 export EDITOR='vim'
@@ -47,7 +49,7 @@ TREE_IGNORE="cache|log|logs|node_modules|vendor"
 
 alias ls=' exa --group-directories-first'
 alias la=' ls -a'
-alias ll=' ls --git -l'
+alias ll=' ls --git -la --git'
 alias lt=' ls --tree -D -L 2 -I ${TREE_IGNORE}'
 alias ltt=' ls --tree -D -L 3 -I ${TREE_IGNORE}'
 alias lttt=' ls --tree -D -L 4 -I ${TREE_IGNORE}'
