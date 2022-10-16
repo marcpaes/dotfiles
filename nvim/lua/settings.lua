@@ -9,10 +9,6 @@ opt.mouse = 'a'
 opt.clipboard = 'unnamedplus'
 opt.swapfile = false
 
--- Theme
-opt.termguicolors = true
-cmd[[colorscheme tokyonight]]
-
 -- Editor
 opt.relativenumber = true
 opt.number = true
