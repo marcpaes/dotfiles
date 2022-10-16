@@ -36,7 +36,10 @@ return require('packer').startup(function(use)
 
       -- Snippets
       {'SirVer/ultisnips'},
-      {'quangnguyen30192/cmp-nvim-ultisnips'}
+      {'quangnguyen30192/cmp-nvim-ultisnips'},
+
+      -- Help
+      {'folke/which-key.nvim'}
     }
   }
 
