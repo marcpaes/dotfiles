@@ -1,7 +1,4 @@
-local g = vim.g
 local opt = vim.opt
-local cmd = vim.cmd
-
 
 -- General
 opt.compatible = false
@@ -16,8 +13,8 @@ opt.wrap = false
 opt.showmatch = true
 opt.cursorline = true
 opt.expandtab = true
-opt.shiftwidth = 2
-opt.tabstop = 2
+opt.shiftwidth = 4
+opt.tabstop = 4
 opt.smartindent = true
 opt.termguicolors = true
 opt.timeoutlen = 500
