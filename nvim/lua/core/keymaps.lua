@@ -1,13 +1,21 @@
 local set = vim.api.nvim_set_keymap
 
-function OptNsFromDescription (description)
-  return  { noremap = true, silent = true, desc = description}
+function OptNsFromDescription(description)
+    return { noremap = true, silent = true, desc = description }
 end
 
 vim.g.mapleader = " "
 
 -- Command
 set("n", ";", ":", { noremap = true })
+
+set("n", "<C-d>", "<C-d>zz", OptNsFromDescription("Scroll down and center"))
+set("n", "<C-u>", "<C-u>zz", OptNsFromDescription("Remove Highlight"))
+set("n", "n", "nzzzv", OptNsFromDescription("Next find and center"))
+set("n", "N", "Nzzzv", OptNsFromDescription("Previous find and center"))
+
+set("v", "J", ":m '>+1<CR>gv=gv", OptNsFromDescription("Move down"))
+set("v", "K", ":m '<-2<CR>gv=gv", OptNsFromDescription("Move Up"))
 
 -- Clean Search
 set("n", "<Leader>h", ":let @/=''<CR>", OptNsFromDescription("Remove Highlight"))
@@ -33,13 +41,17 @@ set("n", "<leader>dn", ":lua vim.lsp.diagnostic.goto_next()", OptNsFromDescripti
 set("n", "<leader>dN", ":lua vim.lsp.diagnostic.goto_prev()", OptNsFromDescription("Previous diagnostic"))
 
 set("n", "<leader>fr", ":lua require('telescope.builtin').lsp_references()<cr>", OptNsFromDescription("Find teferences"))
-set("n", "<leader>ft", ":lua require('telescope.builtin').lsp_definitions()<cr>", OptNsFromDescription("Find definitions"))
-set("n", "<leader>fd", ":lua require('telescope.builtin').lsp_document_diagnostics()<cr>", OptNsFromDescription("Find all document diagnostics"))
-set("n", "<leader>fD", ":lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>", OptNsFromDescription("Find all workspace diagnostics"))
+set("n", "<leader>ft", ":lua require('telescope.builtin').lsp_definitions()<cr>",
+    OptNsFromDescription("Find definitions"))
+set("n", "<leader>fd", ":lua require('telescope.builtin').lsp_document_diagnostics()<cr>",
+    OptNsFromDescription("Find all document diagnostics"))
+set("n", "<leader>fD", ":lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>",
+    OptNsFromDescription("Find all workspace diagnostics"))
 
 -- Code actions
-set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', {noremap = true, desc = "List language actions"})
-set('v', '<leader>lx', '<cmd>lua require\'telescope.builtin\'.lsp_range_code_actions{}<CR>', OptNsFromDescription("List all actions"))
+set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, desc = "List language actions" })
+set('v', '<leader>lx', '<cmd>lua require\'telescope.builtin\'.lsp_range_code_actions{}<CR>',
+    OptNsFromDescription("List all actions"))
 
 -- File Tree
 set("n", "<leader>e", [[<cmd>Neotree filesystem toggle left<CR>]], OptNsFromDescription("Tree open"))
