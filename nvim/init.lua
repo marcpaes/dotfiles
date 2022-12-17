@@ -7,16 +7,9 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Settings & Keys
-require 'settings'
-require 'keymaps'
+require 'core.settings'
+require 'core.keymaps'
+require 'core.packer'
 
 -- Plugins
-require 'plugins.packer'
-require 'plugins.treesitter'
-require 'plugins.telescope'
-require 'plugins.lsp'
-require 'plugins.terminal'
-require 'plugins.lualine'
-require 'plugins.neotree'
-require 'plugins.whichkey'
-require 'plugins.debugger'
+-- require 'plugins.debugger'
