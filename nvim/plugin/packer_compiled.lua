@@ -215,6 +215,11 @@ _G.packer_plugins = {
     path = "/home/marcelopaes/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  undotree = {
+    loaded = true,
+    path = "/home/marcelopaes/.local/share/nvim/site/pack/packer/start/undotree",
+    url = "https://github.com/mbbill/undotree"
+  },
   ["which-key.nvim"] = {
     loaded = true,
     path = "/home/marcelopaes/.local/share/nvim/site/pack/packer/start/which-key.nvim",

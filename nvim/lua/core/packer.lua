@@ -77,6 +77,7 @@ return require('packer').startup(function(use)
         require('packer').sync()
     end
 
+    use 'mbbill/undotree'
     -- Theme
     vim.opt.termguicolors = true
     vim.cmd[[colorscheme tokyonight]]

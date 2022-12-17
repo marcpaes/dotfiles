@@ -49,3 +49,6 @@ set("n", "<leader>tb", [[<cmd>Neotree buffers toggle left<CR>]], OptNsFromDescri
 -- ToggleTerm
 set("n", "<leader>ttg", "<cmd>lua _lazygit_toggle()<CR>", OptNsFromDescription("Terminal - Lazy Git"))
 set("n", "<leader>tth", "<cmd>lua _htop_toggle()<CR>", OptNsFromDescription("Terminal - Htop"))
+
+-- Undo Tree
+set("n", "<leader>u", [[<cmd>UndotreeToggle<CR>]], OptNsFromDescription("Undo Tree"))
