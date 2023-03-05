@@ -78,24 +78,10 @@ return require('packer').startup(function(use)
         require('packer').sync()
     end
 
-    use {
-        "zbirenbaum/copilot.lua",
-        event = "VimEnter",
-        config = function()
-            vim.defer_fn(function()
-                require("copilot").setup()
-            end, 100)
-        end,
-    }
-    use {
-        "zbirenbaum/copilot-cmp",
-        after = { "copilot.lua" },
-        config = function ()
-            require("copilot_cmp").setup()
-        end
-    }
-
+    use { "zbirenbaum/copilot.lua" }
+    use { "zbirenbaum/copilot-cmp", requires = { "zbirenbaum/copilot.lua" }}
     use 'mbbill/undotree'
+
     -- Theme
     vim.opt.termguicolors = true
     vim.cmd [[colorscheme tokyonight]]
