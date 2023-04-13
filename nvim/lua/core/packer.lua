@@ -69,7 +69,10 @@ return require('packer').startup(function(use)
 
     use 'github/copilot.vim'
 
-    use 'mbbill/undotree'
+    use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+        require("toggleterm").setup()
+    end }
+
     -- Theme
     vim.opt.termguicolors = true
     vim.cmd [[colorscheme tokyonight]]
