@@ -64,3 +64,7 @@ set("n", "<leader>tth", "<cmd>lua _htop_toggle()<CR>", OptNsFromDescription("Ter
 
 -- Undo Tree
 set("n", "<leader>u", [[<cmd>UndotreeToggle<CR>]], OptNsFromDescription("Undo Tree"))
+
+-- Copilot
+set("i", "<M-a>", 'copilot#Accept("<CR>")', OptNsFromDescription("Accept Copilot suggestion"))
+

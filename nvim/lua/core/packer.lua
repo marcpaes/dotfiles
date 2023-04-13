@@ -1,12 +1,3 @@
--- Initialize Packer
-local fn = vim.fn
-local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
-        install_path })
-    vim.cmd [[packadd packer.nvim]]
-end
-
 return require('packer').startup(function(use)
     -- basic plugins
     use 'wbthomason/packer.nvim'
@@ -70,34 +61,21 @@ return require('packer').startup(function(use)
     }
 
     -- Extra
-    use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
-        require("toggleterm").setup()
-    end }
-
-    if packer_bootstrap then
-        require('packer').sync()
-    end
-
     use {
-        "zbirenbaum/copilot.lua",
-        event = "VimEnter",
-        config = function()
-            vim.defer_fn(function()
-                require("copilot").setup()
-            end, 100)
-        end,
-    }
-    use {
-        "zbirenbaum/copilot-cmp",
-        after = { "copilot.lua" },
-        config = function ()
-            require("copilot_cmp").setup()
+        "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+            require("toggleterm").setup()
         end
     }
+
+    use 'github/copilot.vim'
 
     use 'mbbill/undotree'
     -- Theme
     vim.opt.termguicolors = true
     vim.cmd [[colorscheme tokyonight]]
+
+    if packer_bootstrap then
+        require('packer').sync()
+    end
 
 end)
