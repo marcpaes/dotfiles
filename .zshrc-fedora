@@ -1,0 +1,67 @@
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+ZSH_THEME="powerlevel10k/powerlevel10k"
+
+export PATH=$HOME/bin:/usr/local/bin:/usr/lib64/dotnet:/usr/bin:/usr/local/go/bin:$HOME/.local/bin:$PATH
+export ZSH="$HOME/.oh-my-zsh"
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+
+# History settings
+export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd:cd ..:cd..:zh:cp:vim:mv"
+ENABLE_CORRECTION="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_ALL_DUPS
+setopt HIST_FIND_NO_DUPS
+setopt HIST_SAVE_NO_DUPS
+setopt HIST_REDUCE_BLANKS
+setopt HIST_VERIFY
+
+#FZF
+# export FZF_PATH="$HOME/.fzf"
+export FZF_PATH="/usr/share/fzf"
+export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# IF FZF was installed from GIT
+# [[ -f ~/.fzf/fzf.zsh ]] && source ~/.fzf/fzf.zsh
+
+[ -f $FZF_PATH/shell/key-bindings.zsh ] && source $FZF_PATH/shell/key-bindings.zsh
+[ -f $FZF_PATH/shell/completion.zsh ] && source $FZF_PATH/shell/completion.zsh
+
+plugins=(git zsh-nvm docker docker-compose dotenv kubectl npm fzf fzf-tab tmux)
+
+source $ZSH/oh-my-zsh.sh
+
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+else
+   export EDITOR='nvim'
+fi
+
+alias vim=nvim
+alias vi=nvim
+alias k=kubectl
+alias cat='bat'
+
+TREE_IGNORE="cache|log|logs|node_modules|vendor"
+
+alias ls=' exa --group-directories-first --icons'
+alias la=' ls -la'
+alias ll=' ls --git -la --git'
+alias lt=' ls --tree -D -L 2 -I ${TREE_IGNORE}'
+alias ltt=' ls --tree -D -L 3 -I ${TREE_IGNORE}'
+alias lttt=' ls --tree -D -L 4 -I ${TREE_IGNORE}'
+alias ltttt=' ls --tree -D -L 5 -I ${TREE_IGNORE}'
+
+alias tmp=' cd $(mktemp -d)'
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
+export NVM_DIR="$HOME/.nvm"
+export MANPAGER='nvim +Man!'
