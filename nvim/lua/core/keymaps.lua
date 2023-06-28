@@ -37,16 +37,16 @@ set("n", "gt", ":lua vim.lsp.buf.type_definition()<cr>", OptNsFromDescription("G
 set("n", "<leader>li", ":lua vim.lsp.buf.hover()<cr>", OptNsFromDescription("Language info (hover)"))
 set("n", "<leader>lh", ":lua vim.lsp.buf.signature_help()<cr>", OptNsFromDescription("Language signature"))
 set("n", "<leader>lr", ":lua vim.lsp.buf.rename()<cr>", OptNsFromDescription("Rename"))
-set("n", "<leader>dn", ":lua vim.lsp.diagnostic.goto_next()", OptNsFromDescription("Next diagnostic"))
-set("n", "<leader>dN", ":lua vim.lsp.diagnostic.goto_prev()", OptNsFromDescription("Previous diagnostic"))
+set("n", "<leader>ln", ":lua vim.diagnostic.goto_next()<cr>", OptNsFromDescription("Next diagnostic"))
+set("n", "<leader>lp", ":lua vim.diagnostic.goto_prev()<cr>", OptNsFromDescription("Next diagnostic"))
+set("n", "<leader>ld", ":lua vim.diagnostic.open_float()<cr>", OptNsFromDescription("Open diagnostic message"))
+set("n", "<leader>lD", ":lua vim.diagnostic.setloclist()<cr>", OptNsFromDescription("Open diagnostic list"))
 
 set("n", "<leader>fr", ":lua require('telescope.builtin').lsp_references()<cr>", OptNsFromDescription("Find teferences"))
 set("n", "<leader>ft", ":lua require('telescope.builtin').lsp_definitions()<cr>",
     OptNsFromDescription("Find definitions"))
-set("n", "<leader>fd", ":lua require('telescope.builtin').lsp_document_diagnostics()<cr>",
-    OptNsFromDescription("Find all document diagnostics"))
-set("n", "<leader>fD", ":lua require('telescope.builtin').lsp_workspace_diagnostics()<cr>",
-    OptNsFromDescription("Find all workspace diagnostics"))
+set("n", "<leader>fd", ":lua require('telescope.builtin').diagnostics()<cr>",
+    OptNsFromDescription("Find workspace diagnostics"))
 
 -- Code actions
 set('n', '<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>', { noremap = true, desc = "List language actions" })
@@ -66,5 +66,5 @@ set("n", "<leader>tth", "<cmd>lua _htop_toggle()<CR>", OptNsFromDescription("Ter
 set("n", "<leader>u", [[<cmd>UndotreeToggle<CR>]], OptNsFromDescription("Undo Tree"))
 
 -- Copilot
-set("i", "<M-a>", 'copilot#Accept("<CR>")', OptNsFromDescription("Accept Copilot suggestion"))
+set("i", "<M-CR>", 'copilot#Accept("<CR>")', OptNsFromDescription("Accept Copilot suggestion"))
 
