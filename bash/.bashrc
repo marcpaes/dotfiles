@@ -120,7 +120,7 @@ fi
 export PATH="$PATH:$HOME/.node/bin:$HOME/go/bin"
 
 alias vim=nvim
-alias ls=exa
+alias ls=' exa --group-directories-first --icons'
 alias l='ls -alF'
 alias k=kubectl
 alias cat='batcat --plain'
