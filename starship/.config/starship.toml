@@ -1,0 +1,10 @@
+[directory]
+style = "bold cyan"
+truncate_to_repo = false
+truncation_length = 1
+fish_style_pwd_dir_length = 1
+
+[git_branch]
+style = "bold green"
+format = "[\\[[$symbol$branch$tag](bold green)\\]](bold white)"
+symbol = "\ue725 "
