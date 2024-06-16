@@ -126,6 +126,7 @@ alias k=kubectl
 alias cat='batcat --plain'
 alias kctx='kubectl config use-context'
 alias vimconfig='nvim ~/.config/nvim/init.lua'
+alias bat='batcat --color=always'
 
 . "$HOME/.asdf/asdf.sh"
 . "$HOME/.asdf/completions/asdf.bash"
