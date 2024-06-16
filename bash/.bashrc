@@ -125,7 +125,6 @@ alias l='ls -alF'
 alias k=kubectl
 alias cat='batcat --plain'
 alias kctx='kubectl config use-context'
-#alias vimconfig='nvim ~/.config/nvim/init.lua'
 alias vimconfig='nvim -c "cd ~/.config/nvim" ~/.config/nvim/init.lua'
 alias bat='batcat --color=always'
 
